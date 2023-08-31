@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p::first-line {
+        font-weight: bold;
+        color: brown;
+        word-spacing: 2px;
+        letter-spacing: 1px;
+      }
+      p.about::first-line {
+        color: green;
+      }
+      P::first-letter{
+        font-size:48px ;
+      }
+      ::selection{
+        background-color: hotpink;
+      }
+      p::after{
+        content: '\261D';
+        font-size: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati hic sed
+      suscipit, dolorum magni nam iure autem asperiores nesciunt quasi eligendi
+      fugiat ratione temporibus rerum modi tempora repudiandae consectetur
+      excepturi.
+    </p>
+
+    <p class="about">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati hic sed
+      suscipit, dolorum magni nam iure autem asperiores nesciunt quasi eligendi
+      fugiat ratione temporibus rerum modi tempora repudiandae consectetur
+      excepturi.
+    </p>
+  </body>
+</html>
