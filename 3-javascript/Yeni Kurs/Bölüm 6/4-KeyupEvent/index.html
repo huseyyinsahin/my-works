@@ -1,0 +1,48 @@
+  
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">  
+      <link rel="shortcut icon" href="#">    
+      <title>KeyupEvent</title>
+      <style>
+        body{
+          background: #eee;
+        }
+        form{          
+          margin:  auto;
+          background: white;
+          padding: 20px;
+          max-width: 250px;
+        }
+        input{
+          display: block;
+          padding: 5px;
+          margin: 10px auto;
+         
+        }
+        .success{
+          border: 1px solid green;
+        }
+        .error{
+          border: 1px solid red;
+        }
+      </style>
+      
+    </head>
+    <body>
+      <div style="display: flex;justify-content: center;align-items: center;">
+        <h1 id="can">DOM</h1>      
+      </div>
+      <form class="signupForm">
+        <input type="text" id="username" name="username" placeholder="Kullanıcı Adınızı Giriniz">
+        <div class="message"></div>
+        <input type="submit" value="Kaydet">
+       
+      </form>
+     
+
+      <script src="can.js"></script>
+    </body>
+</html>
