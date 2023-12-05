@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: darkcyan;
+}
+.container {
+  background: lightgreen;
+  width: 500px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  padding: 20px;
+}
+.heading {
+  font-size: 25px;
+}
+.tempDiv {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.tempInput {
+  width: 70%;
+  padding: 5px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  color: darkgreen;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 600px) {
+  .tempInput {
+    width: 100%;
+  }
+  .tempDiv {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
