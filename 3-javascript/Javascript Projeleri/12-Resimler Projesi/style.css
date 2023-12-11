@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  background: white;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-size: 40px;
+}
+.imageDiv {
+  margin: 15px 25%;
+}
+.imageDiv img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.loading img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
