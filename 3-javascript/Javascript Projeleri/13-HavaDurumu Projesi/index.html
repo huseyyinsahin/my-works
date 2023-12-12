@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hava Durumu</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hava Durumu</h1>
+      <form id="form">
+        <input
+          type="text"
+          class="city"
+          id="city"
+          placeholder="Şehrinizi Giriniz" />
+        <button class="cityButton">Hava Nasıl</button>
+      </form>
+      <div id="weather">
+        <div class="icon" id="icon"></div>
+        <div id="temperature" class="temperature"></div>
+        <div class="description" id="description"></div>
+        <div class="details" id="details"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

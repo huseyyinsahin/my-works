@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 600px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+form {
+  display: flex;
+}
+.city {
+  width: 75%;
+  padding: 10px;
+  background: lightblue;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  border-radius: 10px 0px 0px 10px;
+}
+button {
+  width: 25%;
+  border-radius: 0px 10px 10px 0px;
+  border: none;
+  background-color: blue;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.icon img {
+  width: 50px;
+  height: 50px;
+}
+.temperature {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 20px 0px;
+}
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.details div {
+  background-color: lightblue;
+  padding: 25px;
+  border-radius: 10px;
+  font-size: 18px;
+  margin: 10px;
+}
+@media (max-width: 768px) {
+  .details div {
+    width: 100%;
+  }
+}
