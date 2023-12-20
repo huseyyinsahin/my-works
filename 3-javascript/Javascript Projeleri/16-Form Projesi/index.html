@@ -10,14 +10,17 @@
   <body>
     <div class="mainDiv">
       <h1 class="title">Kayıt Formu</h1>
-      <form>
+      <form id="form" novalidate>
         <div class="form-group">
           <label>Ad</label>
           <input
             type="text"
             id="name"
             name="name"
-            placeholder="Adınızı Giriniz.." />
+            placeholder="Adınızı Giriniz.."
+            required
+            minlength="3"
+            maxlength="20" />
         </div>
         <div class="form-group">
           <label>Soyad</label>
@@ -25,7 +28,10 @@
             type="text"
             id="surname"
             name="surname"
-            placeholder="Soyadınızı Giriniz.." />
+            placeholder="Soyadınızı Giriniz.."
+            required
+            minlength="3"
+            maxlength="20" />
         </div>
         <div class="form-group">
           <label>Email Adresi</label>
@@ -33,7 +39,8 @@
             type="email"
             id="email"
             name="email"
-            placeholder="a@hotmail.com" />
+            placeholder="a@hotmail.com"
+            required />
         </div>
         <div class="form-group">
           <label>Telefon Numarası</label>
@@ -41,7 +48,9 @@
             type="tel"
             id="phone"
             name="phone"
-            placeholder="555-555-5555" />
+            placeholder="555-555-5555"
+            required
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
         </div>
         <div class="form-group">
           <label>Şifre</label>
@@ -49,7 +58,9 @@
             type="password"
             id="password"
             name="password"
-            placeholder="Şifrenizi Giriniz..." />
+            placeholder="Şifrenizi Giriniz..."
+            required
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).(?=.*[a-zA-Z]).{8,}$" />
         </div>
         <div class="form-group">
           <label>Şifre Tekrarı</label>
@@ -57,7 +68,9 @@
             type="password"
             id="repassword"
             name="repassword"
-            placeholder="Şifrenizi tekrar Giriniz..." />
+            placeholder="Şifrenizi tekrar Giriniz..."
+            required
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).(?=.*[a-zA-Z]).{8,}$" />
         </div>
         <div class="form-group">
           <label>Adres</label>
@@ -66,12 +79,13 @@
             id="address"
             name="address"
             placeholder="Adres Giriniz"
-            rows="5"></textarea>
+            rows="5"
+            required></textarea>
         </div>
         <button type="submit">Kaydol</button>
       </form>
       <div class="alertMessage">
-        <h3 id="alertTitle">Lütfen tüm alanları doldurunuz!</h3>
+        <h3 id="alertTitle">Lütfen Tüm Alanları Doldurunuz!</h3>
       </div>
     </div>
 
