@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  background-color: blueviolet;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  background-color: lavender;
+  min-width: 600px;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  color: black;
+  padding: 20px 40px;
+  border-radius: 20px;
+}
+form {
+  text-align: left;
+}
+.remainingDiv {
+  width: 500px;
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+  margin-left: 10px;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 20px;
+  border: 1px solid gray;
+  outline: none;
+}
+h1 {
+  font-size: 35px;
+}
+button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  font-size: 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: green;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* ikinci ekran */
+.timeDiv {
+  text-align: center;
+}
+ul {
+  display: flex;
+}
+li {
+  list-style-type: none;
+  font-size: 30px;
+  padding: 10px;
+}
+li span {
+  font-size: 65px;
+  color: red;
+}
+/* üçüncü ekran */
+.complete {
+  text-align: center;
+}
