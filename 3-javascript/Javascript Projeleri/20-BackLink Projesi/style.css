@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #673aaa;
+}
+h1 {
+  text-align: center;
+  color: white;
+  background-color: black;
+  width: 300px;
+  margin: 20px auto;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 20px;
+}
+.modal-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+}
+.show-modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  width: 500px;
+  animation: modelopen 1s;
+}
+@keyframes modelopen{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #673aaa;
+  color: white;
+  align-items: center;
+  padding: 15px;
+}
+
+.close-icon {
+  cursor: pointer;
+  font-size: 24px;
+}
+.modal-content {
+  padding: 20px;
+}
+.form-group {
+  height: 50px;
+}
+.form-label {
+  color: #673aaa;
+}
+.form-input {
+  width: 100%;
+  padding: 5px;
+  border: 2px solid #673aaa;
+  border-radius: 5px;
+  outline: none;
+}
+button {
+  background-color: #673aaa;
+  color: white;
+  height: 30px;
+  width: 100px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
