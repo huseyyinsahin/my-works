@@ -17,7 +17,13 @@
             <h1>Todo</h1>
           </span>
           <div class="todo-content">
-            <ul class="drag-item-list" id="todo-list">
+            <ul
+              class="drag-item-list"
+              id="todo-list"
+              ondragover="allowDrop(event)"
+              ondragenter="dragEnter(0)"
+              ondrop="drop(event)"
+            >
               <li class="drag-item">test</li>
               <li class="drag-item">test</li>
             </ul>
@@ -38,10 +44,16 @@
         <!-- InProgress ile İlgili -->
         <li class="drag-column progress-column">
           <span class="header">
-            <h1>Todo</h1>
+            <h1>In Progress</h1>
           </span>
           <div class="progress-content">
-            <ul class="drag-item-list" id="progress-list">
+            <ul
+              class="drag-item-list"
+              id="progress-list"
+              ondragover="allowDrop(event)"
+              ondragenter="dragEnter(1)"
+              ondrop="drop(event)"
+            >
               <li class="drag-item">test</li>
               <li class="drag-item">test</li>
               <li class="drag-item">test</li>
@@ -64,10 +76,16 @@
         <!-- Done ile İlgili -->
         <li class="drag-column done-column">
           <span class="header">
-            <h1>Todo</h1>
+            <h1>Done</h1>
           </span>
           <div class="done-content">
-            <ul class="drag-item-list" id="done-list">
+            <ul
+              class="drag-item-list"
+              id="done-list"
+              ondragover="allowDrop(event)"
+              ondragenter="dragEnter(2)"
+              ondrop="drop(event)"
+            >
               <li class="drag-item">test</li>
               <li class="drag-item">test</li>
               <li class="drag-item">test</li>
