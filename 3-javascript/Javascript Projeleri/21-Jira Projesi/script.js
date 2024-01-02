@@ -56,12 +56,36 @@ function allowDrop(e) {
 }
 function dragEnter(column) {
   // console.log(listColumns[column]);
+  listColumns[column].classList.add("over");
   currentColumn = column;
 }
+
+function updateInsideArrays() {
+  todoListArray = [];
+  for (let i = 0; i < todoList.children.length; i++) {
+    todoListArray.push(todoList.children[i].textContent);
+  }
+  progressListArray = [];
+  for (let i = 0; i < progressList.children.length; i++) {
+    progressListArray.push(progressList.children[i].textContent);
+  }
+  doneListArray = [];
+  for (let i = 0; i < doneList.children.length; i++) {
+    doneListArray.push(doneList.children[i].textContent);
+  }
+
+  updateDOM();
+}
+
 function drop(e) {
   e.preventDefault();
   const parent = listColumns[currentColumn];
+
+  listColumns.forEach((column) => {
+    column.classList.remove("over");
+  });
   parent.appendChild(draggedItem);
+  updateInsideArrays();
 }
 
 function drag(e) {
