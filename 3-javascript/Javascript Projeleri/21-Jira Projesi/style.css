@@ -11,10 +11,11 @@ h1 {
   color: black;
 }
 ul {
+  padding: 0;
   list-style-type: none;
   margin: 0;
-  padding: 0;
 }
+
 .app-title {
   text-align: center;
 }
@@ -22,14 +23,15 @@ ul {
 .drag-list {
   display: flex;
 }
+
+.drag-container {
+  margin: 20px;
+}
 .drag-column {
   flex: 1;
   margin: 0 10px;
-  background-color: lightgrey;
+  background-color: lightgray;
   border-radius: 10px;
-}
-.drag-container {
-  margin: 20px;
 }
 .drag-item {
   background-color: black;
@@ -39,6 +41,7 @@ ul {
   cursor: pointer;
   line-height: 24px;
 }
+
 .todo-column .header,
 .todo-column .update {
   background-color: red;
@@ -47,6 +50,7 @@ ul {
 .progress-column .update {
   background-color: lightblue;
 }
+
 .done-column .header,
 .done-column .update {
   background-color: lightgreen;
@@ -58,6 +62,7 @@ ul {
   justify-content: center;
   border-radius: 10px;
 }
+
 .header h1 {
   font-size: 1.25rem;
 }
@@ -66,8 +71,9 @@ ul {
   display: flex;
   justify-content: space-between;
 }
+
 .add-btn {
-  background-color: coral;
+  background: coral;
   padding: 5px 10px;
   margin: 10px;
   border-radius: 5px;
@@ -77,15 +83,18 @@ ul {
   background-color: white;
   color: black;
 }
+
 .update {
   display: none;
 }
 .plus-span {
   font-size: 20px;
 }
+
 .over {
   padding: 50px 10px;
 }
+
 .add-container {
   min-height: 100px;
   background-color: white;
@@ -94,6 +103,7 @@ ul {
   padding: 5px 10px;
   display: none;
 }
+
 .add-item {
   width: 100%;
   min-height: 50px;

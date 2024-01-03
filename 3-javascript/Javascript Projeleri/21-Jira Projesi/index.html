@@ -4,102 +4,98 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jira Uygulaması</title>
-    <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="" />
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <h1 class="app-title">Jira Uygulaması</h1>
     <div class="drag-container">
       <ul class="drag-list">
-        <!-- Todo ile İlgili -->
+
+        
+        <!-- Todo İle İlgili  -->
         <li class="drag-column todo-column">
           <span class="header">
             <h1>Todo</h1>
           </span>
-          <div class="todo-content">
+
+          <div id="todo-content">
             <ul
               class="drag-item-list"
               id="todo-list"
               ondragover="allowDrop(event)"
               ondragenter="dragEnter(0)"
               ondrop="drop(event)"
-            >
-              <li class="drag-item">test</li>
-              <li class="drag-item">test</li>
-            </ul>
+            ></ul>
           </div>
           <div class="add-container">
             <div class="add-item" contenteditable="true"></div>
           </div>
+
           <div class="add-btn-group">
-            <div class="add-btn">
+            <div class="add-btn" onclick="showItemDiv(0)">
               <span class="plus-span">+</span>
             </div>
-            <div class="add-btn update">
+            <div class="add-btn update" onclick="hideItemDiv(0)">
               <span>Kaydet</span>
             </div>
           </div>
         </li>
 
-        <!-- InProgress ile İlgili -->
+        <!-- InProgress İle İlgili  -->
         <li class="drag-column progress-column">
           <span class="header">
             <h1>In Progress</h1>
           </span>
-          <div class="progress-content">
+
+          <div id="progress-content">
             <ul
               class="drag-item-list"
               id="progress-list"
               ondragover="allowDrop(event)"
               ondragenter="dragEnter(1)"
               ondrop="drop(event)"
-            >
-              <li class="drag-item">test</li>
-              <li class="drag-item">test</li>
-              <li class="drag-item">test</li>
-              <li class="drag-item">test</li>
-            </ul>
+            ></ul>
           </div>
           <div class="add-container">
             <div class="add-item" contenteditable="true"></div>
           </div>
+
           <div class="add-btn-group">
-            <div class="add-btn">
+            <div class="add-btn" onclick="showItemDiv(1)">
               <span class="plus-span">+</span>
             </div>
-            <div class="add-btn update">
+            <div class="add-btn update" onclick="hideItemDiv(1)">
               <span>Kaydet</span>
             </div>
           </div>
         </li>
 
-        <!-- Done ile İlgili -->
+        <!-- Done İle İlgili  -->
         <li class="drag-column done-column">
           <span class="header">
             <h1>Done</h1>
           </span>
-          <div class="done-content">
+
+          <div id="done-content">
             <ul
               class="drag-item-list"
               id="done-list"
               ondragover="allowDrop(event)"
               ondragenter="dragEnter(2)"
               ondrop="drop(event)"
-            >
-              <li class="drag-item">test</li>
-              <li class="drag-item">test</li>
-              <li class="drag-item">test</li>
-              <li class="drag-item">test</li>
-            </ul>
+            ></ul>
           </div>
           <div class="add-container">
             <div class="add-item" contenteditable="true"></div>
           </div>
+
           <div class="add-btn-group">
-            <div class="add-btn">
+            <div class="add-btn" onclick="showItemDiv(2)">
               <span class="plus-span">+</span>
             </div>
-            <div class="add-btn update">
+            <div class="add-btn update" onclick="hideItemDiv(2)">
               <span>Kaydet</span>
             </div>
           </div>
