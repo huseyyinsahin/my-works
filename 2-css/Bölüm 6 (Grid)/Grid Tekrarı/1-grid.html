@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .container {
+        display: grid;
+        /* grid-template-columns: 150px 200px 150px 200px; */
+        /* grid-template-columns: 150px auto auto; */
+        /* grid-template-columns: auto auto auto; */
+        /* grid-template-columns: auto 25% 50%; */
+        /* grid-template-columns: repeat(4, auto); */
+        /* grid-template-columns: 1fr 2fr 1fr; */
+        grid-template-columns: repeat(5, 1fr);
+
+        /* grid-template-rows: 200px 300px; */
+        /* grid-template-rows: 1fr 3fr; */
+        /* grid-auto-rows: 2fr; */
+
+        background-color: brown;
+        padding: 20px;
+        gap: 10px;
+        /* column-gap: 10px; */
+        /* row-gap: 10px; */
+      }
+      .item {
+        background-color: goldenrod;
+        padding: 15px;
+        color: #fff;
+        font-size: 18px;
+      }
+      .item:first-child {
+        /* grid-row-start: 1;
+            grid-row-end: 4; */
+        /* grid-row: 1 / 4; */
+        /* grid-row: 1 / span 3; */
+
+        /* grid-column-start: 1;
+            grid-column-end: 5; */
+        /* grid-column: 1 / 5; */
+        /* grid-column: 1 / span 3; */
+
+        grid-area: 1 / 1 / span 3 / span 3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">Grid Eleman 1</div>
+      <div class="item">Grid Eleman 2</div>
+      <div class="item">Grid Eleman 3</div>
+      <div class="item">Grid Eleman 4</div>
+      <div class="item">Grid Eleman 5</div>
+      <div class="item">Grid Eleman 6</div>
+      <div class="item">Grid Eleman 7</div>
+      <div class="item">Grid Eleman 8</div>
+      <div class="item">Grid Eleman 9</div>
+      <div class="item">Grid Eleman 9</div>
+      <div class="item">Grid Eleman 9</div>
+      <div class="item">Grid Eleman 9</div>
+    </div>
+  </body>
+</html>

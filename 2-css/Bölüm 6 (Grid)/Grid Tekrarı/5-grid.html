@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 20%);
+        grid-template-rows: repeat(2, 20%);
+
+        background-color: brown;
+        padding: 20px;
+        gap: 10px;
+        height: 600px;
+
+        /* justify-items: stretch; */
+        /* justify-items: start; */
+        /* justify-items: center; */
+        /* justify-items: end; */
+
+        /* align-items: center; */
+        /* align-items: start; */
+        /* align-items: end; */
+
+        /* justify-content: end; */
+        /* justify-content: start; */
+        /* justify-content: center; */
+
+        /* align-content: center; */
+        /* align-content: end; */
+        /* align-content: start; */
+      }
+
+      .item:first-child {
+        /* align-self: start; */
+        /* align-self: center; */
+        justify-self: center;
+      }
+      .item {
+        background-color: goldenrod;
+        padding: 15px;
+        color: #fff;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">Grid 1</div>
+      <div class="item">Grid 2</div>
+      <div class="item">Grid 3</div>
+      <div class="item">Grid 4</div>
+      <div class="item">Grid 5</div>
+      <div class="item">Grid 6</div>
+    </div>
+  </body>
+</html>
