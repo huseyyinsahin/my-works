@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow: hidden;
+}
+.container {
+  display: flex;
+  width: 90vw;
+}
+.animation {
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90vh;
+  border-radius: 50px;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+.animation h3 {
+  font-size: 20px;
+  position: absolute;
+  bottom: 30px;
+  left: 45%;
+  margin: 0px;
+  opacity: 0;
+}
+.active h3 {
+  color: white;
+  text-decoration: underline;
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.8s;
+}
+.active {
+  flex: 5;
+}
+@media (max-width: 600px) {
+  .contianer {
+    width: 100vw;
+  }
+  .animation:nth-of-type(4),
+  .animation:nth-of-type(5) {
+    display: none;
+  }
+}
