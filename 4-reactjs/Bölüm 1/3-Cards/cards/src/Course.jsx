@@ -1,12 +1,13 @@
 import React from "react";
 
-function Course({title,description}) {
-//   console.log(props);
-//   const title=props.title;
-//   const description=props.description;
-// const{title,description}=props;
+function Course({image, title, description }) {
+  //   console.log(props);
+  //   const title=props.title;
+  //   const description=props.description;
+  // const{title,description}=props;
   return (
     <div>
+      <img src={image} alt="" />
       <div>{title}</div>
       <div>{description}</div>
     </div>
