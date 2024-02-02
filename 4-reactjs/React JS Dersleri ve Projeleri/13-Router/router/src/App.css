@@ -1,0 +1,13 @@
+.mainNav{
+  background-color: blue;
+  padding: 15px 30px;
+}
+.mainNav a{
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+.mainNav a.active{
+font-weight: bold;
+font-size: 20px;
+}
