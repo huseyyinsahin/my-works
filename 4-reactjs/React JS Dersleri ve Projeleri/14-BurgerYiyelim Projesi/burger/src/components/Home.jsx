@@ -1,9 +1,21 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
+import BannerImage from "../assets/banneryeni.jpg";
+import "../style/Home.css";
 
 function Home() {
   return (
-    <div>Home</div>
-  )
+    <div
+      className="mainPage"
+      style={{ backgroundImage: `url(${BannerImage})` }}
+    >
+      <div className="order">
+        <Link to="/menu">
+          <button>SİPARİŞ VER</button>
+        </Link>
+      </div>
+    </div>
+  );
 }
 
-export default Home
+export default Home;
