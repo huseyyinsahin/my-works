@@ -14,7 +14,7 @@ function GeneralForm() {
   //   console.log(formik);
   return (
     <form>
-      <div>
+      <div className="inputDiv">
         <label>Email</label>
         <input
           type="email"
@@ -24,7 +24,7 @@ function GeneralForm() {
           placeholder="Mail adresinizi giriniz"
         />
       </div>
-      <div>
+      <div className="inputDiv">
         <label>Yaş</label>
         <input
           type="number"
@@ -34,7 +34,7 @@ function GeneralForm() {
           placeholder="Yaşınızı giriniz"
         />
       </div>
-      <div>
+      <div className="inputDiv">
         <label>Şifre</label>
         <input
           type="password"
@@ -44,7 +44,7 @@ function GeneralForm() {
           placeholder="Şifrenizi giriniz"
         />
       </div>
-      <div>
+      <div className="inputDiv">
         <label>Şifre Tekrar</label>
         <input
           type="password"
