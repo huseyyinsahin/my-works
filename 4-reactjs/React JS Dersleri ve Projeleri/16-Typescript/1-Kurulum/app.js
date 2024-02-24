@@ -11,22 +11,21 @@
 //   console.log("Id=" + id + ", Name" + name);
 // }
 // 3.
-// let first: number = 123;
-// let second: number = 0x37cf;
-// let third: number = 0o377;
-// let fourth: number = 0b111001;
-// console.log(first);
-// console.log(second);
-// console.log(third);
-// console.log(fourth);
-// let employeefirstName: string = "Can Boz";
-// console.log(employeefirstName);
-// let employeeName: string = "Jhon smith";
-// let employeeDept: string = "Finance";
-// let employeeDesc1: string =
-//   employeeName + " works in the " + employeeDept + " department.";
-// let employeeDesc2: string = `${employeeName} works in the ${employeeDept} department.`;
-// console.log(employeeDesc1);
-// console.log(employeeDesc2);
-// let isPresent:boolean=true;
-// console.log(isPresent);
+var first = 123;
+var second = 0x37cf;
+var third = 255;
+var fourth = 57;
+console.log(first);
+console.log(second);
+console.log(third);
+console.log(fourth);
+var employeefirstName = "Can Boz";
+console.log(employeefirstName);
+var employeeName = "Jhon smith";
+var employeeDept = "Finance";
+var employeeDesc1 = employeeName + " works in the " + employeeDept + " department.";
+var employeeDesc2 = "".concat(employeeName, " works in the ").concat(employeeDept, " department.");
+console.log(employeeDesc1);
+console.log(employeeDesc2);
+var isPresent = true;
+console.log(isPresent);
