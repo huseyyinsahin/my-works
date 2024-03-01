@@ -45,13 +45,75 @@
 // let bastir = () console.log("Can Boz");
 // bastir();
 // 3.Function Overloading
-function add(a, b) {
-    return a + b;
-}
-var degisken1 = add(4, 5);
-console.log(degisken1);
-function add(a, b) {
-    return a + b;
-}
-var degisken = add(5, 9);
-console.log(degisken);
+// function add(a: number, b: number): number {
+//   return a + b;
+// }
+// let degisken1 = add(4, 5);
+// console.log(degisken1);
+// function add(a: string, b: string): string;
+// function add(a: number, b: number): number;
+// function add(a: any, b: any): any {
+//   return a + b;
+// }
+// let degisken = add(5, 9);
+// console.log(degisken);
+// 4.Rest Parameters
+// function toplam(a: string, ...numbers: number[]): number {
+//     console.log(a);
+//     let total = 0;
+//     numbers.forEach((num) => total += num);
+//     return total;
+// }
+// console.log(toplam("Can", 20, 30));
+// function birlestir(message: string, ...names: string[]) {
+//   console.log(message + " " + names.join(", "));
+// }
+// birlestir("Merhaba", "Can", "Osman", "Tuba")
+// 5.Class
+// class Person {
+//   id: number;
+//   firstName: string;
+//   lastName: string;
+//   constructor(id: number, firstName: string, lastName: string) {
+//       this.id = id;
+//       this.firstName = firstName;
+//       this.lastName = lastName;
+//   }
+//   getFullName() {
+//       return `${this.firstName} ${this.lastName}`
+//   }
+// }
+// let kisibilgim = new Person(43, 'Can', 'Boz');
+// console.log(kisibilgim);
+// console.log(kisibilgim.getFullName());
+// 6.Access Modifiers
+// class Person {
+//   public id: number;
+//   firstName: string;
+//   lastName: string;
+//   constructor(id: number, firstName: string, lastName: string) {
+//       this.id = id;
+//       this.firstName = firstName;
+//       this.lastName = lastName;
+//   }
+//   getFullName() {
+//       return `${this.firstName} ${this.lastName}`
+//   }
+// }
+// let kisibilgim = new Person(43, 'Can', 'Boz');
+// console.log(kisibilgim.id);
+// 7.Readonly
+var Person = /** @class */ (function () {
+    function Person(id, firstName, lastName) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    Person.prototype.getFullName = function () {
+        return "".concat(this.firstName, " ").concat(this.lastName);
+    };
+    return Person;
+}());
+var kisibilgim = new Person(43, 'Can', 'Boz');
+kisibilgim.id = 5;
+console.log(kisibilgim.id);
