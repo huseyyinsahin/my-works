@@ -91,19 +91,145 @@
 
 // 4.Interface
 
-interface Person {
-  firstName: string;
-  lastName: string;
+// interface Person {
+//   firstName: string;
+//   lastName: string;
+// }
+
+// function getFullName(person: Person) {
+//   return `${person.firstName} ${person.lastName}`;
+// }
+
+// let person = {
+//   firstName: "Huseyin",
+//   lastName: "Sahin",
+//   age: 23,
+// };
+
+// console.log(getFullName(person));
+
+// 5.Optional Parameters - Readonly
+
+// interface Person {
+//     firstName: string,
+//     lastName: string,
+//     middleName?: string
+// }
+
+// function getFullName(person: Person) {
+//     if (person.middleName) {
+//         return `${person.firstName} ${person.middleName} ${person.lastName}`;
+//     }
+//     return `${person.firstName} ${person.lastName}`;
+// }
+
+// let person: Person = {
+//     firstName: 'Hüseyin',
+//     lastName: 'Şahin'
+// };
+
+// person.firstName = "Hüseyinnnn";
+
+// console.log(getFullName(person));
+
+// interface StringFormat {
+//   (str: string, isUpper: boolean): string;
+// }
+
+// let format: StringFormat;
+
+// format = function (str: string, isUpper: boolean) {
+//   return isUpper ? str.toLocaleUpperCase() : str.toLocaleLowerCase();
+// };
+
+// console.log(format("Hüseyin Şahin", true));
+
+// 6. Interface Extend - Implement
+
+// interface IPerson {
+//     name: string;
+//     gender: string;
+// }
+
+// interface IEmployee extends IPerson {
+//     empNumber: number;
+// }
+
+// interface IWorker extends IPerson {
+//     empDepartment: string;
+// }
+
+// let employee: IEmployee = {
+//     empNumber: 1,
+//     gender: 'Male',
+//     name: 'Can'
+
+// }
+
+// let employeeDepartment: IWorker = {
+//     empDepartment: 'Software Department',
+//     gender: 'Male',
+//     name: 'Can'
+
+// }
+
+// console.log(employee);
+// console.log(employeeDepartment);
+
+// interface IPerson {
+//   name: string;
+//   gender: string;
+// }
+
+// class Employee implements IPerson {
+//   empNumber: number;
+//   name: string;
+//   gender: string;
+//   constructor(empNumber: number, name: string, gender: string) {
+//     this.empNumber = empNumber;
+//     this.name = name;
+//     this.gender = gender;
+//   }
+// }
+
+// let employee = new Employee(5, "Can", "Male");
+// console.log(employee);
+
+// 7.Type Intersection
+
+interface BusinessPartner {
+  name: string;
+  credit: number;
 }
 
-function getFullName(person: Person) {
-  return `${person.firstName} ${person.lastName}`;
+interface Identity {
+  name: string;
+  id: number;
 }
 
-let person = {
-  firstName: "Huseyin",
-  lastName: "Sahin",
-  age: 23,
+interface Contact {
+  email: string;
+  phone: string;
+}
+
+type Employee = Identity & Contact;
+
+let kisim: Employee = {
+  id: 54,
+  name: "Hüseyin Şahin",
+  email: "sdasd@hotmail.com",
+  phone: "345435345324",
 };
 
-console.log(getFullName(person));
+console.log(kisim);
+
+type Customer = BusinessPartner & Contact;
+
+let musterim: Customer = {
+  credit: 2121,
+  email: "asdas@hotmail.com",
+  name: "Hüseyin Şahin",
+  phone: "3423423324",
+};
+
+console.log(musterim);

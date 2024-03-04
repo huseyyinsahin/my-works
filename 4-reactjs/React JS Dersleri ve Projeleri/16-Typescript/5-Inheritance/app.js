@@ -1,10 +1,15 @@
 // 1. Inheritance
-function getFullName(person) {
-    return "".concat(person.firstName, " ").concat(person.lastName);
-}
-var person = {
-    firstName: "Huseyin",
-    lastName: "Sahin",
-    age: 23,
+var kisim = {
+    id: 54,
+    name: "Hüseyin Şahin",
+    email: "sdasd@hotmail.com",
+    phone: "345435345324",
 };
-console.log(getFullName(person));
+console.log(kisim);
+var musterim = {
+    credit: 2121,
+    email: "asdas@hotmail.com",
+    name: "Hüseyin Şahin",
+    phone: "3423423324",
+};
+console.log(musterim);
