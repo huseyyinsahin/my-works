@@ -48,3 +48,63 @@ const tersineCevirme = (array) => {
 };
 tersineCevirme(numbers3);
 console.log(numbers3);
+
+//4.Soru: Bir dizideki tüm negatif sayıları filtreleyen ve geri kalan sayıları içeren bir JavaScript fonksiyonu yazın.
+//const numbers4 = [3, -1, 7, -5, 2, -8, 4];
+
+const numbers4 = [3, -1, 7, -5, 2, -8, 4];
+const negatifFiltreleme = (array) => {
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (0 <= array[i]) {
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+};
+console.log(negatifFiltreleme(numbers4));
+
+//5.Soru: Verilen bir dizideki en büyük sayıyı bulan bir JavaScript fonksiyonu yazın.
+//const numbers5 = [3, 7, 2, 9, 1, 6, 5];
+
+const numbers5 = [3, 7, 2, 9, 1, 6, 5];
+
+const findMax = (array) => {
+  let maxx = array[0];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > maxx) {
+      maxx = array[i];
+    }
+  }
+  return maxx;
+};
+
+console.log(findMax(numbers5));
+
+//6.Soru: Bir string içindeki tüm harflerin sayısını hesaplayan bir JavaScript fonksiyonu yazın. Fonksiyon, büyük-küçük harf ayrımı yapmamalıdır.
+//const str = "Merhaba Dunya";
+
+const countLetters = (str) => {
+  let count = 0;
+  for (const char of str) {
+    if (char !== " ") {
+      count++;
+    }
+  }
+  return count;
+};
+
+const str = "Merhaba Dunya";
+console.log(countLetters(str));
+
+//7.Soru: Verilen bir sayının faktöriyelini hesaplayan bir JavaScript fonksiyonu yazın. Faktöriyel, pozitif bir tam sayının kendisi ile 1 arasındaki tüm tam sayıların çarpımıdır.
+
+const factorial = (number) => {
+  let result = 1;
+  for (let i = number; i > 1; i--) {
+    result *= i;
+  }
+  return result;
+};
+
+console.log(factorial(10));
