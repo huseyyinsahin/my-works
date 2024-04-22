@@ -108,3 +108,82 @@ const factorial = (number) => {
 };
 
 console.log(factorial(10));
+
+//8.Soru: Bir stringin tersini oluşturan bir JavaScript fonksiyonu yazın.
+
+const reverseString = (str) => {
+  const characters = str.split("");
+  const reversedArr = characters.reverse();
+  const arr = reversedArr.join("");
+  return arr;
+};
+
+console.log(reverseString("Merhaba"));
+console.log(reverseString("Selam"));
+
+//9.Soru: Verilen bir string içindeki bir harfin kaç kez tekrarlandığını bulan bir JavaScript fonksiyonu yazın.
+
+const count = (a, b) => {
+  const array = a.split("");
+  let say = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] == b) {
+      say++;
+    }
+  }
+  return say;
+};
+
+console.log(count("Merhaba", "a"));
+
+//10.Soru: Verilen bir sayının asal olup olmadığını kontrol eden bir JavaScript fonksiyonu yazın.
+
+const prime = (num) => {
+  if (num <= 1) {
+    return false;
+  }
+
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+console.log(prime(7));
+console.log(prime(30));
+console.log(prime(1));
+
+//11.Soru: Verilen bir dizideki tüm çift sayıları toplayan bir JavaScript fonksiyonu yazın.
+const dizi = [3, -1, 7, 5, 2, 8, 4];
+
+const pozToplama = (array) => {
+  let toplam = 0;
+  for (let num of array) {
+    if (num % 2 == 0) {
+      toplam += num;
+    }
+  }
+  return toplam;
+};
+console.log(pozToplama(dizi));
+
+//12.Soru: Verilen bir string içindeki tüm rakamları toplayan bir JavaScript fonksiyonu yazın.
+const yazi = "Merhaba123Dunya456";
+
+const rakamToplama = (verilen) => {
+  const newArray = verilen.split("");
+  const intDizi = newArray.map((item) => parseInt(item));
+  let toplam = 0;
+  for (let item of intDizi) {
+    if (Number.isInteger(item)) {
+      toplam += item;
+    }
+  }
+
+  return toplam;
+};
+
+console.log(rakamToplama(yazi));
