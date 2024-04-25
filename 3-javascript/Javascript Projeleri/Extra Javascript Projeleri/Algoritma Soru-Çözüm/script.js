@@ -187,3 +187,55 @@ const rakamToplama = (verilen) => {
 };
 
 console.log(rakamToplama(yazi));
+
+//13.Soru: Bir dizideki sayıların çiftlerini bulup, bu çiftleri çıkartarak yeni bir dizi oluşturun. Örneğin, [1, 2, 3, 4, 5] dizisi verildiğinde, çıktı [1, 3, 5] olmalıdır.
+
+const tekSayi = (dizi) => {
+  const yeniDizi = [];
+  for (let item of dizi) {
+    if (item % 2 == 1) {
+      yeniDizi.push(item);
+    }
+  }
+  return yeniDizi;
+};
+const tekDizi = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+console.log(tekSayi(tekDizi));
+
+//14.Soru: Bir dizi içindeki en büyük iki farklı sayının toplamını bulan bir JavaScript fonksiyonu yazın.
+
+const findLargestSum = (dizi) => {
+  let enBuyuk = dizi[0];
+  let enBuyuk2 = dizi[0];
+  for (let i = 0; i < dizi.length; i++) {
+    if (dizi[i] > enBuyuk) {
+      enBuyuk2 = enBuyuk;
+      enBuyuk = dizi[i];
+    } else if (dizi[i] > enBuyuk2 && dizi[i] !== enBuyuk) {
+      enBuyuk2 = dizi[i];
+    }
+  }
+  return enBuyuk + enBuyuk2;
+};
+
+const dizia = [10, 20, 30, 40, 50];
+console.log(findLargestSum(dizia));
+
+//15.Soru: Bir dizideki tekrarlanan sayıları bulan bir JavaScript fonksiyonu yazın.
+
+const findDuplicates = (dizi) => {
+  const yeniDizi = [];
+
+  for (let i = 0; i < dizi.length; i++) {
+    for (let j = i + 1; j < dizi.length; j++) {
+      if (dizi[i] === dizi[j] && !yeniDizi.includes(dizi[i])) {
+        yeniDizi.push(dizi[i]);
+      }
+    }
+  }
+
+  return yeniDizi;
+};
+
+const dizib = [1, 2, 3, 4, 5, 2, 7, 8, 5, 8, 8];
+console.log(findDuplicates(dizib));
