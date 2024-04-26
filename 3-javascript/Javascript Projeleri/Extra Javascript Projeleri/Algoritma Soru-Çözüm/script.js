@@ -239,3 +239,84 @@ const findDuplicates = (dizi) => {
 
 const dizib = [1, 2, 3, 4, 5, 2, 7, 8, 5, 8, 8];
 console.log(findDuplicates(dizib));
+
+//16.Soru: Verilen bir dizideki tüm elemanların toplamını ve ortalamasını hesaplayan bir JavaScript fonksiyonu yazın.
+
+const calculateSumAndAverage = (dizi) => {
+  let a = 0;
+  let b = 0;
+  for (let i = 0; i < dizi.length; i++) {
+    a += dizi[i];
+  }
+  b = a / dizi.length;
+
+  return { toplam: a, ortalama: b };
+};
+
+const dizic = [1, 2, 3, 4, 5, 6, 7];
+console.log(calculateSumAndAverage(dizic));
+
+//17.Soru: Bir string içindeki en uzun kelimeyi bulan bir JavaScript fonksiyonu yazın.
+
+const enUzunKelime = (dizi) => {
+  const kelimeler = dizi.split(" ");
+  let enUzun = "";
+  for (let i = 0; i < kelimeler.length; i++) {
+    if (kelimeler[i].length > enUzun.length) {
+      enUzun = kelimeler[i];
+    }
+  }
+  return enUzun;
+};
+
+console.log(enUzunKelime("Merhaba dünya! selamlarr  "));
+
+//18.Soru: Verilen bir stringin içindeki tüm harflerin frekansını hesaplayan bir JavaScript fonksiyonu yazın.
+
+const calculateCharacterFrequency = (metin) => {
+  const frekans = {};
+
+  for (let i = 0; i < metin.length; i++) {
+    const karakter = metin[i];
+    if (frekans[karakter]) {
+      frekans[karakter]++;
+    } else {
+      frekans[karakter] = 1;
+    }
+  }
+  return frekans;
+};
+
+console.log(calculateCharacterFrequency("Merhaba dünyaa!"));
+
+//19.Soru: Verilen bir dizideki tek sayıların toplamını ve çift sayıların toplamını hesaplayan bir JavaScript fonksiyonu yazın.
+
+const tekCift = (dizi) => {
+  let a = 0;
+  let b = 0;
+  for (let i = 0; i < dizi.length; i++) {
+    if (dizi[i] % 2 === 0) {
+      a += dizi[i];
+    }
+    if (dizi[i] % 2 === 1) {
+      b += dizi[i];
+    }
+  }
+  return { Tek: b, Çift: a };
+};
+
+console.log(tekCift([1, 2, 3, 4, 5, 6, 7]));
+
+//20.Soru: Verilen bir dizideki en büyük üçüncü sayıyı bulan bir JavaScript fonksiyonu yazın.
+
+const findThirdLargest = (dizi) => {
+  if (dizi.length < 3) {
+    return "Dizi en az 3 eleman içermelidir.";
+  }
+
+  dizi.sort((a, b) => b - a);
+
+  return dizi[2];
+};
+
+console.log(findThirdLargest([50, 20, 100, 600, 50, 200, 300]));
