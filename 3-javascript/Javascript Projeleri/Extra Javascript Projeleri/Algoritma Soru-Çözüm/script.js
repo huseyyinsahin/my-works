@@ -320,3 +320,26 @@ const findThirdLargest = (dizi) => {
 };
 
 console.log(findThirdLargest([50, 20, 100, 600, 50, 200, 300]));
+
+//21.Soru: Verilen bir dizideki ardışık sayıları bulan bir JavaScript fonksiyonu yazın. Ardışık sayılar, birbirini takip eden sayılar olarak tanımlanır.
+
+const ardisikSayilar = (dizi) => {
+  dizi.sort((a, b) => a - b);
+
+  let yeniDizi = [];
+  let geciciDizi = [dizi[0]];
+
+  for (let i = 1; i < dizi.length; i++) {
+    if (dizi[i] === dizi[i - 1] + 1) {
+      geciciDizi.push(dizi[i]);
+    } else {
+      if (geciciDizi.length > 1) {
+        yeniDizi.push(geciciDizi);
+      }
+      geciciDizi = [dizi[i]];
+    }
+  }
+  return yeniDizi;
+};
+
+console.log(ardisikSayilar([1, 2, 3, 5, 6, 7, 9]));
