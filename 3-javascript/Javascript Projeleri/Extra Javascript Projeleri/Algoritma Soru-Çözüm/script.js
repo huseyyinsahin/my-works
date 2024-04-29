@@ -343,3 +343,54 @@ const ardisikSayilar = (dizi) => {
 };
 
 console.log(ardisikSayilar([1, 2, 3, 5, 6, 7, 9]));
+
+//22.Soru: Verilen bir dizideki sayıları, o sayının karesiyle değiştiren bir JavaScript fonksiyonu yazın.
+
+const sayininKaresi = (dizi) => {
+  const yeniDizi = [];
+  for (let i = 0; i < dizi.length; i++) {
+    karesi = dizi[i] ** 2;
+    yeniDizi.push(karesi);
+  }
+  return yeniDizi;
+};
+
+console.log(sayininKaresi([1, 2, 3, 4, 5, 100]));
+
+//23.Soru: Verilen bir stringin bir anagram olup olmadığını kontrol eden bir JavaScript fonksiyonu yazın. (Anagramlar, aynı harflerin farklı bir sırayla kullanıldığı kelimeler veya cümlelerdir.)
+
+const anagram = (dizi1, dizi2) => {
+  const yeniDizi1 = dizi1.split("").sort();
+  const yeniDizi2 = dizi2.split("").sort();
+  if (yeniDizi1.length !== yeniDizi2.length) {
+    return false;
+  }
+  for (let i = 0; i < yeniDizi1.length; i++) {
+    if (yeniDizi1[i] === yeniDizi2[i]) {
+      a = true;
+    } else {
+      a = false;
+    }
+  }
+  return a;
+};
+
+console.log(anagram("listne", "silent"));
+console.log(anagram("lesma", "selama"));
+
+//24.Soru: Verilen bir sayı dizisinde, herhangi bir iki sayının toplamı, verilen bir hedef sayıya eşit olacak şekilde, dizinin içindeki sayıları bulun. Eğer böyle bir ikili çift bulunamazsa, boş bir dizi döndürün.
+
+const esitSayi = (dizi, sayi) => {
+  const yeniDizi = [];
+  for (let i = 0; i < dizi.length; i++) {
+    for (let j = i + 1; j < dizi.length; j++) {
+      if (sayi === dizi[i] + dizi[j]) {
+        yeniDizi.push(dizi[i], dizi[j]);
+      }
+    }
+  }
+  return yeniDizi;
+};
+
+console.log(esitSayi([1, 2, 3, 4, 5], 9));
+console.log(esitSayi([1, 2, 3, 4, 5], 10));
