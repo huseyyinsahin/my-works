@@ -424,3 +424,19 @@ const enSıkTekrar = (str) => {
 console.log(enSıkTekrar("helllooo"));
 console.log(enSıkTekrar("banana"));
 console.log(enSıkTekrar("merhaba"));
+
+//26.Soru: Verilen bir dizideki tüm elemanların faktöriyellerini hesaplayan bir JavaScript fonksiyonu nasıl yazılır?
+
+const diziFaktoriyel = (dizi) => {
+  const yeniDizi = [];
+  for (let i = 0; i < dizi.length; i++) {
+    let factoriyel = 1;
+    for (let j = 1; j <= dizi[i]; j++) {
+      factoriyel *= j;
+    }
+    yeniDizi.push(factoriyel);
+  }
+  return yeniDizi;
+};
+
+console.log(diziFaktoriyel([1, 2, 3, 4, 5, 6, 7, 8, 9]));
