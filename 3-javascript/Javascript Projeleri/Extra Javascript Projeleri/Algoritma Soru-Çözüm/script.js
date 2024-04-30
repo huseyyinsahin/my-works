@@ -394,3 +394,33 @@ const esitSayi = (dizi, sayi) => {
 
 console.log(esitSayi([1, 2, 3, 4, 5], 9));
 console.log(esitSayi([1, 2, 3, 4, 5], 10));
+
+//25.Soru: Bir string içindeki en sık tekrarlanan karakteri bulan bir JavaScript fonksiyonu yazın. Eğer birden fazla karakter aynı sıklıkta tekrarlanıyorsa, ilk olarak karşılaşılan karakteri döndürün.
+
+const enSıkTekrar = (str) => {
+  const karakterFrekans = {};
+
+  for (let karakter of str) {
+    if (karakterFrekans[karakter]) {
+      karakterFrekans[karakter]++;
+    } else {
+      karakterFrekans[karakter] = 1;
+    }
+  }
+
+  let enSıkKarakter = "";
+  let enSıkTekrarSayısı = 0;
+
+  for (let karakter in karakterFrekans) {
+    if (karakterFrekans[karakter] > enSıkTekrarSayısı) {
+      enSıkKarakter = karakter;
+      enSıkTekrarSayısı = karakterFrekans[karakter];
+    }
+  }
+
+  return enSıkKarakter;
+};
+
+console.log(enSıkTekrar("helllooo"));
+console.log(enSıkTekrar("banana"));
+console.log(enSıkTekrar("merhaba"));
