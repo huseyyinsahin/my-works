@@ -440,3 +440,19 @@ const diziFaktoriyel = (dizi) => {
 };
 
 console.log(diziFaktoriyel([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+
+//27.Soru Verilen bir stringin palindrom olup olmadığını kontrol eden bir JavaScript fonksiyonu yazın. Palindrom, tersten okunduğunda da aynı olan bir stringtir. Örneğin, "radar" bir palindromdur.
+
+const palindrom = (str) => {
+  const yeniStr = str.split("");
+
+  for (let i = 0; i < Math.floor(yeniStr.length / 2); i++) {
+    if (yeniStr[i] !== yeniStr[yeniStr.length - 1 - i]) {
+      return false;
+    }
+  }
+  return true;
+};
+
+console.log(palindrom("radar"));
+console.log(palindrom("hello"));
