@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CAPTCHA Validator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="captcha">
+      <h1 class="captcha-h1">Captcha Validator</h1>
+      <div class="captcha-content">
+        <canvas class="captcha-canvas" id="captcha-canvas"></canvas>
+        <input type="text" class="captcha-input" id="captcha-input" />
+        <div class="buttons">
+          <button class="submit-button" id="submit-button">Send</button>
+          <button class="refresh-button" id="refresh-button">Refresh</button>
+        </div>
+        <span class="output" id="output"></span>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
