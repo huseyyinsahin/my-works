@@ -441,7 +441,7 @@ const diziFaktoriyel = (dizi) => {
 
 console.log(diziFaktoriyel([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
-//27.Soru Verilen bir stringin palindrom olup olmadığını kontrol eden bir JavaScript fonksiyonu yazın. Palindrom, tersten okunduğunda da aynı olan bir stringtir. Örneğin, "radar" bir palindromdur.
+//27.Soru: Verilen bir stringin palindrom olup olmadığını kontrol eden bir JavaScript fonksiyonu yazın. Palindrom, tersten okunduğunda da aynı olan bir stringtir. Örneğin, "radar" bir palindromdur.
 
 const palindrom = (str) => {
   const yeniStr = str.split("");
@@ -456,3 +456,59 @@ const palindrom = (str) => {
 
 console.log(palindrom("radar"));
 console.log(palindrom("hello"));
+
+//28.Soru: Verilen bir sayı dizisi içindeki en büyük iki farklı sayının farkını bulan bir JavaScript fonksiyonu yazın. Örneğin, [1, 5, 9, 2, 10] dizisi verildiğinde, en büyük iki farklı sayı 10 ve 9'dur, bu yüzden farkları 1'dir.
+
+const enBuyukIkıFark = (dizi) => {
+  if (dizi.length < 2) {
+    return "Dizi en az iki eleman içermelidir.";
+  }
+
+  let enBuyuk = -Infinity;
+  let ikinciEnBuyuk = -Infinity;
+
+  for (let i = 0; i < dizi.length; i++) {
+    if (dizi[i] > enBuyuk) {
+      ikinciEnBuyuk = enBuyuk;
+      enBuyuk = dizi[i];
+    } else if (dizi[i] > ikinciEnBuyuk && dizi[i] !== enBuyuk) {
+      ikinciEnBuyuk = dizi[i];
+    }
+  }
+
+  return enBuyuk - ikinciEnBuyuk;
+};
+
+console.log(enBuyukIkıFark([1, 5, 9, 2, 10]));
+
+//29.Soru: Bir dizi verildiğinde, dizideki her bir sayıyı ikiyle çarparak yeni bir dizi oluşturan ve bu yeni diziyi döndüren bir JavaScript fonksiyonu yazın.
+
+const carpıIleYeniDiziOlustur = (dizi) => {
+  yeniDizi = [];
+  for (let i = 0; i < dizi.length; i++) {
+    yeniDizi.push(dizi[i] * 2);
+  }
+  return yeniDizi;
+};
+
+console.log(carpıIleYeniDiziOlustur([1, 2, 3, 4, 5, 500]));
+
+//30.Soru: Verilen bir cümledeki her kelimenin baş harfini büyük harfe dönüştüren bir JavaScript fonksiyonu yazın.
+
+function buyukHarfeDonustur(cumle) {
+  let kelimeler = cumle.split(" ");
+  let yeniCumle = "";
+
+  for (let i = 0; i < kelimeler.length; i++) {
+    let kelime = kelimeler[i];
+    let ilkHarf = kelime.charAt(0).toUpperCase();
+    let digerHarfler = kelime.slice(1);
+    yeniCumle += ilkHarf + digerHarfler + " ";
+  }
+
+  return yeniCumle.trim();
+}
+
+let ornekCumle = "javascript fonksiyonu yazın";
+let yeniCumle = buyukHarfeDonustur(ornekCumle);
+console.log(yeniCumle);
