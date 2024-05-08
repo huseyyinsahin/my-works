@@ -512,3 +512,42 @@ function buyukHarfeDonustur(cumle) {
 let ornekCumle = "javascript fonksiyonu yazın";
 let yeniCumle = buyukHarfeDonustur(ornekCumle);
 console.log(yeniCumle);
+
+//31.Soru: Verilen bir dizide (array), dizinin her elemanı kendisinden bir önceki elemanın karesi mi kontrol eden bir JavaScript fonksiyonu yazabilir misiniz?
+
+function herElemanKaresiMi(dizi) {
+  if (dizi.length < 2) {
+    return false;
+  }
+  for (let i = 1; i < dizi.length; i++) {
+    if (dizi[i] !== Math.pow(dizi[i - 1], 2)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+const dizi1 = [4, 16, 256, 65536];
+console.log(herElemanKaresiMi(dizi1));
+
+//32.Soru: Verilen bir dizide (array), ardışık olan üç sayının toplamı en büyük olan alt diziyi bulan bir JavaScript fonksiyonu yazmanı istiyorum. Fonksiyon, bu üç sayıyı içeren alt diziyi döndürmelidir.
+
+const enBuyukUcArdisik = (dizi) => {
+  const yeniDizi = [];
+  let enBuyuk = 0;
+  let enBuyukIndex = 0;
+  for (let i = 0; i < dizi.length - 2; i++) {
+    const altDizi = dizi.slice(i, i + 3);
+    yeniDizi.push(altDizi.slice());
+    const toplam = altDizi.reduce((a, b) => a + b, 0);
+    if (toplam > enBuyuk) {
+      enBuyuk = toplam;
+      enBuyukIndex = i;
+    }
+  }
+  return yeniDizi[enBuyukIndex];
+};
+
+const arr = [4, 2, 1, 5, 0, 6, 3];
+console.log(enBuyukUcArdisik(arr));
+
