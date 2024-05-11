@@ -551,3 +551,69 @@ const enBuyukUcArdisik = (dizi) => {
 const arr = [4, 2, 1, 5, 0, 6, 3];
 console.log(enBuyukUcArdisik(arr));
 
+//33.Soru: Verilen bir string içindeki tüm sesli harfleri kaldıran ve kalan string'i döndüren bir JavaScript fonksiyonu yazın. Sesli harfler: 'a', 'e', 'ı', 'i', 'o', 'ö', 'u', 'ü'. Örneğin, "merhaba dünya" string'i için fonksiyon şu çıktıyı vermelidir: "mrhb dny".
+
+const sesliKaldıran = (str) => {
+  const ayır = str.split("");
+  const sesli = ["a", "e", "ı", "i", "o", "ö", "u", "ü"];
+  const yeniDizi = [];
+  for (let i = 0; i < ayır.length; i++) {
+    if (!sesli.includes(ayır[i])) {
+      yeniDizi.push(ayır[i]);
+    }
+  }
+  return yeniDizi.join("");
+};
+
+console.log(sesliKaldıran("Merhaba Dünya"));
+
+//34.Soru: Dizi içerisindeki kendisi hariç diğer sayılarla çarpılan sayıların çıktısı veren bir fonksiyon yazınız.
+
+const kendisiHaricCarpim = (dizi) => {
+  let yeniDizi = [];
+  for (let i = 0; i < dizi.length; i++) {
+    let a = 1;
+    for (let j = 0; j < dizi.length; j++) {
+      if (i !== j) {
+        a *= dizi[j];
+      }
+    }
+    yeniDizi.push(a);
+  }
+  return yeniDizi;
+};
+
+console.log(kendisiHaricCarpim([1, 2, 3, 4]));
+
+//35.Soru: Verilen bir metinde (string), metindeki her karakterin ASCII değerini toplayarak bir toplam değeri döndüren bir JavaScript fonksiyonu yazın.
+
+const degerDöndürme = (str) => {
+  const ayrıDizi = str.split("");
+  let a = 0;
+  for (let i = 0; i < ayrıDizi.length; i++) {
+    let b = ayrıDizi[i];
+    let ascii = b.charCodeAt(0);
+    a += ascii;
+  }
+  return a;
+};
+
+console.log(degerDöndürme("hello world"));
+
+//36.Soru: Verilen bir tamsayı dizisinde (array), tüm negatif sayıları dizinin başına taşıyan ve sıfır hariç tüm pozitif sayıları dizinin sonuna taşıyan bir JavaScript fonksiyonu yazın. Dizideki sayıların sırasını değiştirmeden bu işlemi gerçekleştirmeniz gerekmektedir.
+
+const düzenleyici = (dizi) => {
+  const negatifDizi = [];
+  const pozitifDizi = [];
+  for (let i = 0; i < dizi.length; i++) {
+    if (dizi[i] < 0) {
+      negatifDizi.push(dizi[i]);
+    } else {
+      pozitifDizi.push(dizi[i]);
+    }
+  }
+  let hepsi = negatifDizi.concat(pozitifDizi);
+  return hepsi;
+};
+
+console.log(düzenleyici([1, -2, 3, 0, -4, 5, -6]));
