@@ -617,3 +617,17 @@ const düzenleyici = (dizi) => {
 };
 
 console.log(düzenleyici([1, -2, 3, 0, -4, 5, -6]));
+
+//37.Soru: Verilen bir tamsayı dizisinde (array), "çiftlet" olarak adlandırdığımız bir alt diziyi bulun. Çiftlet, dizi içindeki her elemanın kendisinden bir önceki elemandan daha büyük olduğu bir alt dizi demektir. Bu durumda, her elemanın kendisinden önceki elemandan daha büyük olduğu bir alt dizi bulunamazsa, çiftlet yoktur.
+
+const oncekiEleman = (dizi) => {
+  const ciftLet = [];
+  for (let i = 0; i < dizi.length; i++) {
+    if (dizi[i] < dizi[i + 1]) {
+      ciftLet.push(dizi[i + 1]);
+    }
+  }
+  return ciftLet;
+};
+
+console.log(oncekiEleman([3, 8, 1, 5, 2, 7, 4, 6]));
