@@ -631,3 +631,19 @@ const oncekiEleman = (dizi) => {
 };
 
 console.log(oncekiEleman([3, 8, 1, 5, 2, 7, 4, 6]));
+
+//38.Soru: Verilen bir tam sayı dizisinde (pozitif ve negatif), dizinin ardışık alt dizilerinden en büyük toplamı bulan bir JavaScript fonksiyonu yazın. Örneğin, [-2, 1, -3, 4, -1, 2, 1, -5, 4] dizisi verildiğinde, ardışık alt dizilerden en büyük toplam 6'dır (dizinin [4, -1, 2, 1] alt dizisi). Bu işlevi yazabilir misiniz?
+
+function maksAltDiziToplami(arr) {
+  let simdikiBitis = arr[0];
+  let suAnaKadarMaksimum = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    simdikiBitis = Math.max(arr[i], simdikiBitis + arr[i]);
+    suAnaKadarMaksimum = Math.max(suAnaKadarMaksimum, simdikiBitis);
+  }
+
+  return suAnaKadarMaksimum;
+}
+
+console.log(maksAltDiziToplami([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
