@@ -647,3 +647,19 @@ function maksAltDiziToplami(arr) {
 }
 
 console.log(maksAltDiziToplami([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+//39.Soru: Bir dizi, 1'den N'ye kadar olan sayıları içeriyor, ancak bu dizide bir sayı eksik. Eksik olan sayıyı bulmak için bir fonksiyon yazmanız gerekiyor.Dizi, 1'den N'ye kadar olan sayılardan oluşur (her sayı yalnızca bir kez geçer).Dizi karışık bir sırada olabilir.
+
+function kayipSayiyiBul(arr) {
+  let enBuyukSayi = Math.max(...arr);
+  let a = 0;
+  const diziToplam = arr.reduce((a, b) => a + b, 0);
+  for (let i = enBuyukSayi; i > 0; i--) {
+    a += i;
+  }
+  return a - diziToplam;
+}
+
+console.log(kayipSayiyiBul([1, 2, 4, 6, 3, 7, 8]));
+console.log(kayipSayiyiBul([1, 2, 4, 6, 3, 7, 8, 5, 10]));
+
