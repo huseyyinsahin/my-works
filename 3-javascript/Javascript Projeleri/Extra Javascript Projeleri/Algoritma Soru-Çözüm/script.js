@@ -663,3 +663,27 @@ function kayipSayiyiBul(arr) {
 console.log(kayipSayiyiBul([1, 2, 4, 6, 3, 7, 8]));
 console.log(kayipSayiyiBul([1, 2, 4, 6, 3, 7, 8, 5, 10]));
 
+//40.Soru: Verilen bir string içindeki açma ve kapama parantezlerinin eşleşip eşleşmediğini kontrol eden bir fonksiyon yazın.String içinde yalnızca açma [ ve kapama ] parantezleri bulunabilir.Parantezlerin sıralaması doğru olmalıdır (örneğin, [[]] geçerlidir, ancak [[[]] veya ][ geçerli değildir).
+
+function eslesenParantezleriKontrolEt(str) {
+  const stack = [];
+
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if (char === "[") {
+      stack.push(char);
+    } else if (char === "]") {
+      if (stack.length === 0 || stack.pop() !== "[") {
+        return false;
+      }
+    }
+  }
+
+  return stack.length === 0;
+}
+
+console.log(eslesenParantezleriKontrolEt("[][][][]"));
+console.log(eslesenParantezleriKontrolEt("[[][][[]]]"));
+console.log(eslesenParantezleriKontrolEt("[[]][][[]]"));
+console.log(eslesenParantezleriKontrolEt("[[][][][]"));
+console.log(eslesenParantezleriKontrolEt("][][][]["));
