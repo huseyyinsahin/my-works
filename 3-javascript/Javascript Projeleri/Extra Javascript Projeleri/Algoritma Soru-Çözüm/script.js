@@ -687,3 +687,54 @@ console.log(eslesenParantezleriKontrolEt("[[][][[]]]"));
 console.log(eslesenParantezleriKontrolEt("[[]][][[]]"));
 console.log(eslesenParantezleriKontrolEt("[[][][][]"));
 console.log(eslesenParantezleriKontrolEt("][][][]["));
+
+//41.Soru: Verilen bir metin içindeki en sık görülen kelimeyi bulan bir fonksiyon yazın. Metin içindeki kelimeler sadece küçük harflerle ve boşluklarla ayrılmıştır.Metin içinde yalnızca küçük harfler ve boşluklar bulunur.Kelimeler arasında yalnızca birer boşluk bulunur ve metin boşluk ile başlamaz veya bitmez.
+
+function enSikGorulenKelime(metin) {
+  const ayir = metin.split(" ");
+  const kelimeler = {};
+  for (let i = 0; i < ayir.length; i++) {
+    const karakter = ayir[i];
+    if (kelimeler[karakter]) {
+      kelimeler[karakter]++;
+    } else {
+      kelimeler[karakter] = 1;
+    }
+  }
+  let maxKey = null;
+  let maxValue = -Infinity;
+
+  for (let key in kelimeler) {
+    if (kelimeler[key] > maxValue) {
+      maxValue = kelimeler[key];
+      maxKey = key;
+    }
+  }
+  return maxKey;
+}
+console.log(enSikGorulenKelime("a a a b b c c c c d d d"));
+console.log(enSikGorulenKelime("kırmızı mavi kırmızı yeşil mavi mavi"));
+
+//42.Soru: Verilen bir ikili dizi (binary array) içindeki en uzun ardışık 1'ler dizisinin uzunluğunu bulan bir fonksiyon yazın.Dizi sadece 0 ve 1 değerlerinden oluşur.Dizi en az bir eleman içerir.
+
+function enUzunArdisikBirlerDizisi(arr) {
+  let sayac = 0;
+  const dizi = [];
+  if (arr.length === 0) {
+    return false;
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 1) {
+      sayac++;
+    } else if (arr[i] === 0) {
+      dizi.push(sayac);
+      sayac = 0;
+    }
+  }
+  if (sayac !== 0) {
+    dizi.push(sayac);
+  }
+  return Math.max(...dizi);
+}
+
+console.log(enUzunArdisikBirlerDizisi([1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1]));
