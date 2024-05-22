@@ -738,3 +738,25 @@ function enUzunArdisikBirlerDizisi(arr) {
 }
 
 console.log(enUzunArdisikBirlerDizisi([1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1]));
+
+//43.Soru: Verilen bir tam sayı dizisi içinde toplamları sıfıra eşit olan tüm üçlüleri (üç elemanlı grupları) bulun. Çözüm kümelerindeki elemanlar artan sıralı olmalıdır. Çözüm kümeleri herhangi bir sırada döndürülebilir.
+
+function ucElemanliToplam(nums) {
+  const yeniDizi = [];
+  nums.sort((a, b) => a - b);
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      for (let a = j + 1; a < nums.length; a++) {
+        if (nums[i] + nums[j] + nums[a] === 0) {
+          yeniDizi.push([nums[i], nums[j], nums[a]]);
+        }
+      }
+    }
+  }
+  return yeniDizi;
+}
+
+console.log(ucElemanliToplam([-1, 0, 1, 2, -1, -4]));
+console.log(ucElemanliToplam([0, 0, 0]));
+
+//44.Soru:
