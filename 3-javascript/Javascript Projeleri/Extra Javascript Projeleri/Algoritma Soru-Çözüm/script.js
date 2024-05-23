@@ -759,4 +759,36 @@ function ucElemanliToplam(nums) {
 console.log(ucElemanliToplam([-1, 0, 1, 2, -1, -4]));
 console.log(ucElemanliToplam([0, 0, 0]));
 
-//44.Soru:
+//44.Soru: İki dizinin (array) kesişimini bulan bir algoritma yazın. Kesişim, her iki dizide de bulunan ortak elemanlardan oluşan bir dizi olmalıdır.
+
+const kesisim = (arr1, arr2) => {
+  const yeniDizi = [];
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      if (arr1[i] === arr2[j] && !yeniDizi.includes(arr1[i])) {
+        yeniDizi.push(arr1[i]);
+      }
+    }
+  }
+  return yeniDizi;
+};
+
+console.log(kesisim([4, 9, 5], [9, 4, 9, 8, 4]));
+console.log(kesisim([4, 9, 5, 8, 1], [9, 4, 9, 8, 4, 8, 8, 9, 4, 1]));
+
+//45.Soru: Verilen bir dizi içinde birden fazla kez bulunan elemanları bulan bir algoritma yazın. Sonuç dizisi, tekrar eden her elemanı yalnızca bir kez içermelidir.
+
+const tekrarEdenElemanlar = (arr) => {
+  const yeniDizi = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] === arr[j]) {
+        yeniDizi.push(arr[i]);
+      }
+    }
+  }
+  return yeniDizi;
+};
+
+console.log(tekrarEdenElemanlar([9, 4, 9, 8, 4]));
+console.log(tekrarEdenElemanlar([1, 1, 2, 2, 3, 3, 4, 4, 5]));
