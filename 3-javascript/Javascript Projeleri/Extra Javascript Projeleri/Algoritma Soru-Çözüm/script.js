@@ -792,3 +792,61 @@ const tekrarEdenElemanlar = (arr) => {
 
 console.log(tekrarEdenElemanlar([9, 4, 9, 8, 4]));
 console.log(tekrarEdenElemanlar([1, 1, 2, 2, 3, 3, 4, 4, 5]));
+
+//46.Soru: Verilen bir string içindeki benzersiz karakterleri (yalnızca bir kez görünen karakterler) bulan bir algoritma yazın ve bunları bir string olarak döndürün. Sonuç stringi, benzersiz karakterleri bulundukları ilk sıraya göre içermelidir.
+
+function benzersizKarakterler(str) {
+  const karakterSayisi = {};
+  const benzersiz = [];
+
+  for (let char of str) {
+    if (karakterSayisi[char]) {
+      karakterSayisi[char]++;
+    } else {
+      karakterSayisi[char] = 1;
+    }
+  }
+
+  for (let char of str) {
+    if (karakterSayisi[char] === 1) {
+      benzersiz.push(char);
+    }
+  }
+  return benzersiz.join("");
+}
+
+console.log(benzersizKarakterler("programming"));
+console.log(benzersizKarakterler("swiss"));
+
+//47.Soru: Bir sayı, ardışık pozitif tam sayıların toplamı olarak ifade edilebiliyorsa, bu sayı "üçgen sayı" olarak adlandırılır. Örneğin, 6 bir üçgen sayıdır çünkü 1 + 2 + 3 = 6.
+
+function ucgenSayiMi(int) {
+  let toplama = 0;
+  for (let i = 1; i < int; i++) {
+    toplama += i;
+    if (toplama === int) {
+      return true;
+    }
+  }
+  return false;
+}
+
+console.log(ucgenSayiMi(6));
+console.log(ucgenSayiMi(10));
+console.log(ucgenSayiMi(14));
+
+//48.Soru: Verilen iki pozitif tam sayının en büyük ortak bölenini (EBOB) bulan bir fonksiyon yazın.
+
+function ebobBul(sayi1, sayi2) {
+  let bolenDizi = [];
+  for (let i = 1; i <= sayi2; i++) {
+    if (sayi1 % i === 0 && sayi2 % i === 0) {
+      bolenDizi.push(i);
+    }
+  }
+  let maxSayi = Math.max(...bolenDizi);
+  return maxSayi;
+}
+
+console.log(ebobBul(12, 18));
+console.log(ebobBul(36, 96));
