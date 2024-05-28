@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(60, 84, 84);
+  overflow: hidden;
+}
+.words {
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+  font-size: 40px;
+}
+.words p {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.buttons {
+  width: 60vw;
+  display: flex;
+  justify-content: space-evenly;
+}
+.buttons button {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: chartreuse;
+  font-size: 20px;
+  cursor: pointer;
+}
+.buttons button:hover {
+  background-color: rgb(50, 83, 17);
+}
+
+.hide {
+  display: none;
+}
