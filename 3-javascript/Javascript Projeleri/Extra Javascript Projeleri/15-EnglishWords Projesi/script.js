@@ -234,13 +234,63 @@ const türkçe = document.getElementById("tr");
 const show = document.getElementById("show");
 const next = document.getElementById("next");
 
-const dizeyeÇevirme = Object.entries(dictionary);
+const türkceInput = document.getElementById("türkce-input");
+const warning = document.getElementById("warning");
+const countElement = document.getElementById("count");
 
-next.addEventListener("click", () => {
+const dizeyeÇevirme = Object.entries(dictionary);
+let suankiKelime;
+let suankiCeviri;
+let count = -1;
+
+next.addEventListener("click", function kelimeYazdir() {
   const mathRandom = Math.floor(Math.random() * dizeyeÇevirme.length);
-  ingilizce.textContent = dizeyeÇevirme[mathRandom][0];
-  türkçe.textContent = dizeyeÇevirme[mathRandom][1];
+  suankiKelime = dizeyeÇevirme[mathRandom][0];
+  suankiCeviri = dizeyeÇevirme[mathRandom][1];
+  ingilizce.textContent = suankiKelime;
+  türkçe.textContent = suankiCeviri;
   dizeyeÇevirme.splice(mathRandom, 1);
+
+  warning.textContent = "";
+
+  count++;
+  countElement.textContent = `${count}`;
+
+  if (dizeyeÇevirme.length === 0) {
+    ingilizce.textContent = "Kelimeler Bitti :)";
+    türkçe.textContent = "TEBRİKLERR";
+  }
+});
+
+türkceInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    if (türkceInput.value === suankiCeviri) {
+      warning.textContent = "Doğru Cevap";
+
+      const mathRandom = Math.floor(Math.random() * dizeyeÇevirme.length);
+      suankiKelime = dizeyeÇevirme[mathRandom][0];
+      suankiCeviri = dizeyeÇevirme[mathRandom][1];
+      ingilizce.textContent = suankiKelime;
+      türkçe.textContent = suankiCeviri;
+      dizeyeÇevirme.splice(mathRandom, 1);
+
+      count++;
+      countElement.textContent = `${count}`;
+
+      setTimeout(() => {
+        warning.textContent = "";
+      }, 3000);
+
+      türkceInput.value = "";
+    } else {
+      warning.textContent = "Yanlış Cevap";
+      türkceInput.value = "";
+
+      setTimeout(() => {
+        warning.textContent = "";
+      }, 3000);
+    }
+  }
 });
 
 show.addEventListener("click", () => {
