@@ -850,3 +850,15 @@ function ebobBul(sayi1, sayi2) {
 
 console.log(ebobBul(12, 18));
 console.log(ebobBul(36, 96));
+
+//49.Soru: Bir dizi içindeki her öğeyi kendinden önceki öğelerin toplamına eşit olacak şekilde güncelleyen bir fonksiyon yazın.Örneğin, [1, 2, 3, 4] dizisini girdi olarak alan fonksiyon, diziyi [1, 3, 6, 10] olarak güncellemelidir.
+
+function updateArray(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    arr[i] = arr[i] + arr[i - 1];
+  }
+  return arr;
+}
+
+console.log(updateArray([1, 2, 3, 4]));
+console.log(updateArray([5, 10, 15]));
